@@ -8,7 +8,8 @@ import pandas as pd
 # クライアント接続オブジェクト
 client = discord.Client()
 # 各種定数
-token = "NDY2NDE0MzE5OTk5OTA5ODg4.Dibt3w.gI6weviGHhkPQrDyI3EExltOU7M"
+test_token = "NDY2NDE0MzE5OTk5OTA5ODg4.Dibt3w.gI6weviGHhkPQrDyI3EExltOU7M"
+token      = "NDY2OTExNTE0NjI0OTE3NTA2.Dii8xQ.4A_nuMZNcuI5H2SRrVuj3Gf5ZE4"
 api_key = "FXingzNkqfzyojk5a4u0RGI0ElthzY"
 api_url = "https://www.worldcoinindex.com/apiservice/v2getmarkets?key=%s&fiat=jpy" % api_key
 
