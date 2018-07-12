@@ -12,6 +12,7 @@ test_token = "NDY2NDE0MzE5OTk5OTA5ODg4.Dibt3w.gI6weviGHhkPQrDyI3EExltOU7M"
 token      = "NDY2OTExNTE0NjI0OTE3NTA2.Dii8xQ.4A_nuMZNcuI5H2SRrVuj3Gf5ZE4"
 api_key = "FXingzNkqfzyojk5a4u0RGI0ElthzY"
 api_url = "https://www.worldcoinindex.com/apiservice/v2getmarkets?key=%s&fiat=jpy" % api_key
+bot_channel_id = "466908324751867918"
 
 # 起動時の処理
 @client.event
@@ -26,7 +27,7 @@ async def on_ready():
 async def on_message(message):
     df = _get_data()
     labels = [label.split("/")[0] for label in df.Label]
-    if message.content in labels:
+    if message.content in labels and message.channel.id == bot_channel_id:
         tmp = await client.send_message(message.channel, 'Now loading...')
         price = df[df["Label"] == "%s/JPY" % message.content]["Price"].values[0]
         price = round(price,3)
