@@ -4,13 +4,13 @@ from urllib.request import urlopen
 import urllib
 import json
 import pandas as pd
+import os
 
 # クライアント接続オブジェクト
 client = discord.Client()
 # 各種定数
-test_token = "NDY2NDE0MzE5OTk5OTA5ODg4.Dibt3w.gI6weviGHhkPQrDyI3EExltOU7M"
-token      = "NDY2OTExNTE0NjI0OTE3NTA2.Dii8xQ.4A_nuMZNcuI5H2SRrVuj3Gf5ZE4"
-api_key = "FXingzNkqfzyojk5a4u0RGI0ElthzY"
+bot_token = os.environ["BOT_TOKEN"]
+api_key = os.environ["API_KEY"]
 api_url = "https://www.worldcoinindex.com/apiservice/v2getmarkets?key=%s&fiat=jpy" % api_key
 bot_channel_id = "466908324751867918"
 
@@ -43,4 +43,4 @@ def _get_data():
     return df
 
 
-client.run(token)
+client.run(test_token)
